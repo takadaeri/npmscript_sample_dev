@@ -1,0 +1,23 @@
+mixin breadcrumb(args)
+  - var cur = args.pop()
+  - var contentNum = 2
+  - var contentLength = args.length + 2
+  nav.breadcrumb(role="navigation" aria-label="現在位置" itemscope="" itemtype="http://schema.org/BreadcrumbList")
+    ul
+      li
+        span(itemprop="itemListElement" itemscope="" itemtype='http://schema.org/ListItem')
+          a(itemprop="item" href="/")
+            span(itemprop="name") 賃貸のホームメイト
+          meta(itemprop="position" content="1")
+      each e in args
+        li
+          span(itemprop="itemListElement" itemscope="" itemtype='http://schema.org/ListItem')
+            a(itemprop="item" href= e[1])
+              span(itemprop="name")= e[0]
+            meta(itemprop="position" content=contentNum)
+        - contentNum++
+      li
+        span(itemprop="itemListElement" itemscope="" itemtype='http://schema.org/ListItem')
+          span(aria-current="page")
+            strong(itemprop="name")= cur[0]
+          meta(itemprop="position" content=contentLength)
