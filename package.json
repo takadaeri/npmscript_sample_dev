@@ -8,6 +8,7 @@
     "dev": "run-p tasks:dev",
     "tasks:dev": "cross-env NODE_ENV=\"dev\" node ./tasks/index.js",
     "tasks:prod": "node ./tasks/index.js",
+    "webpack": "webpack",
     "pwa": "create-pwa --icon=\"./src/common/img/icon.png\" --launch=\"./dist/common/img/launch.png\""
   },
   "author": "perion",
@@ -45,6 +46,7 @@
     "vue-loader": "^15.8.3",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10",
+    "workbox-webpack-plugin": "^4.3.1",
     "xlsx": "^0.15.3"
   }
 }

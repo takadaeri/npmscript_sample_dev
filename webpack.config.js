@@ -1,11 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
+// const WorkboxWebpackPlugin = require('workbox-webpack-plugin') webpackが固まる
 
 const NODE_ENV = process.env.NODE_ENV
 const rootDir = process.cwd()
 
 const src = `${rootDir}/src/_developresources/_js`
 const dist = `${rootDir}/dist/common/js`
+const distSW = `${rootDir}/dist`
 
 let webpackConfig = {
   // prodの設定
@@ -66,6 +68,33 @@ webpackConfig = Object.assign(webpackConfig, {
       }
     ]
   },
+  // plugins: [
+  //   new WorkboxWebpackPlugin.GenerateSW({
+  //     globDirectory: distSW,
+  //     globPatterns: ['/**/*.{html,js,css}', '/**/*.{jpg,png,gif,svg}'],
+  //     swDest: distSW + '/service-worker.js',
+  //     clientsClaim: true,
+  //     skipWaiting: true,
+  //     runtimeCaching: [
+  //       {
+  //         urlPattern: new RegExp('/'),
+  //         handler: 'staleWhileRevalidate',
+  //       },
+  //       {
+  //         urlPattern: new RegExp('https://www.googleapis.com/'),
+  //         handler: 'cacheFirst',
+  //         options: {
+  //           cacheName: 'api',
+  //           expiration: {
+  //             maxEntries: 100,
+  //             maxAgeSeconds: 72 * 60 * 60
+  //           },
+  //           cacheableResponse: { statuses: [0, 200] },
+  //         }
+  //       },
+  //     ],
+  //   })
+  // ],
   resolve: {
     extensions: ['.js'],
     alias: {
