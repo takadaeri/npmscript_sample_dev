@@ -7,7 +7,8 @@
     "build": "run-p tasks:prod",
     "dev": "run-p tasks:dev",
     "tasks:dev": "cross-env NODE_ENV=\"dev\" node ./tasks/index.js",
-    "tasks:prod": "node ./tasks/index.js"
+    "tasks:prod": "node ./tasks/index.js",
+    "pwa": "create-pwa --icon=\"./src/common/img/icon.png\" --launch=\"./dist/common/img/launch.png\""
   },
   "author": "perion",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.7",
     "chokidar": "^3.3.1",
+    "create-pwa": "^2.2.0",
     "cross-env": "^6.0.3",
     "del": "^5.1.0",
     "eslint": "^6.7.2",
