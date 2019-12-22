@@ -1,0 +1,72 @@
+CACHE MANIFEST
+
+CACHE:
+# Offline cache v2
+
+# See below for example
+# on how to add files to cache:
+
+# Favicons
+common/favicons/apple-touch-icon-57x57.png
+common/favicons/apple-touch-icon-60x60.png
+common/favicons/apple-touch-icon-72x72.png
+common/favicons/apple-touch-icon-76x76.png
+common/favicons/apple-touch-icon-114x114.png
+common/favicons/apple-touch-icon-120x120.png
+common/favicons/apple-touch-icon-144x144.png
+common/favicons/apple-touch-icon-152x152.png
+common/favicons/favicon-16x16.png
+common/favicons/favicon-32x32.png
+common/favicons/favicon-96x96.png
+common/favicons/favicon-128x128.png
+common/favicons/favicon-196x196.png
+common/favicons/mstile-70x70.png
+common/favicons/mstile-144x144.png
+common/favicons/mstile-150x150.png
+common/favicons/mstile-310x150.png
+common/favicons/mstile-310x310.png
+common/favicons/favicon.ico
+
+# App Icons
+common/icons/icon-72x72.png
+common/icons/icon-96x96.png
+common/icons/icon-128x128.png
+common/icons/icon-144x144.png
+common/icons/icon-152x152.png
+common/icons/icon-192x192.png
+common/icons/icon-384x384.png
+common/icons/icon-512x512.png
+
+# App Launch screens
+common/launch-screens/launch-screen-2048x2732.png
+common/launch-screens/launch-screen-2732x2048.png
+common/launch-screens/launch-screen-1668x2388.png
+common/launch-screens/launch-screen-2388x1668.png
+common/launch-screens/launch-screen-1668x2224.png
+common/launch-screens/launch-screen-2224x1668.png
+common/launch-screens/launch-screen-1536x2048.png
+common/launch-screens/launch-screen-2048x1536.png
+common/launch-screens/launch-screen-1536x2048.png
+common/launch-screens/launch-screen-2048x1536.png
+common/launch-screens/launch-screen-1242x2688.png
+common/launch-screens/launch-screen-2688x1242.png
+common/launch-screens/launch-screen-1125x2436.png
+common/launch-screens/launch-screen-2436x1125.png
+common/launch-screens/launch-screen-828x1792.png
+common/launch-screens/launch-screen-1792x828.png
+common/launch-screens/launch-screen-1125x2436.png
+common/launch-screens/launch-screen-2436x1125.png
+common/launch-screens/launch-screen-1242x2208.png
+common/launch-screens/launch-screen-2208x1242.png
+common/launch-screens/launch-screen-750x1334.png
+common/launch-screens/launch-screen-1334x750.png
+common/launch-screens/launch-screen-1242x2208.png
+common/launch-screens/launch-screen-2208x1242.png
+common/launch-screens/launch-screen-750x1334.png
+common/launch-screens/launch-screen-1334x750.png
+common/launch-screens/launch-screen-1242x2208.png
+common/launch-screens/launch-screen-2208x1242.png
+common/launch-screens/launch-screen-750x1334.png
+common/launch-screens/launch-screen-1334x750.png
+common/launch-screens/launch-screen-640x1136.png
+common/launch-screens/launch-screen-1136x640.png

@@ -10,7 +10,7 @@ const path = require('path') // パス操作
 
 const copy = (src, dist) => {
   
-  glob('/!(_)**/*.{html,htm,css,js,ico,php,txt,json,htaccess,pdf,wav,csv}', { root: src }, (err, files) => {
+  glob('/**/*.{html,css,js,ico,php,txt,json,htaccess,pdf,wav,csv,appcache}', { root: src }, (err, files) => {
 
     if (err) {
       console.log(err)
@@ -20,6 +20,11 @@ const copy = (src, dist) => {
     const length = files.length
     let count = 0
     files.forEach(file => {
+
+      // ignoreが効かないのでここでパス除外
+      if (file.match(/_developresources/)) {
+        return
+      }
 
       const f = file.split(src)
       const filename = dist + f[1]

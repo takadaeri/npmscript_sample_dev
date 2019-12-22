@@ -5,8 +5,11 @@ block vars
 
 block content
 
+  p PWA対応試運転：今日のbook<br>
+    span.js-book 
+
   .article-wide
-    img.u-max-img(src="http://placehold.jp/35/039be5/f4f6f8/1200x300.png?text=SAMPLE SITE")
+    img.u-max-img(src="/common/img/1200x300.png")
   .article
     h1=data.title
     p=data.description
@@ -27,64 +30,64 @@ block content
     h3.c-ttl-lv4 ロゴカラー／トーンカラー／NOTICE
     .c-grid
       .c-row
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-yellow<br>ロゴのみ<br>#ffca28
           div(style="background:#ffca28;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-amber<br>ロゴ／NOTICEテキスト<br>#ffa000
           div(style="background:#ffa000;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-orange<br>ロゴ／強調テキスト<br>#f57c00
           div(style="background:#f57c00;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-yellow-ops<br>背景<br>#f1e6bf
           div(style="background:#f1e6bf;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
     h3.c-ttl-lv4 ベースカラー
     .c-grid
       .c-row
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-navy<br>基本<br>#2c384a
           div(style="background:#2c384a;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-navy-sub<br>サブ<br>#40526c
           div(style="background:#40526c;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
     h3.c-ttl-lv4 キーカラー
     .c-grid
       .c-row
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-blue<br>基本<br>#039be5
           div(style="background:#039be5;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-blue-sub<br>サブ<br>#45b1e5
           div(style="background:#45b1e5;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-blue-ops<br>背景<br>#c9e2ef
           div(style="background:#c9e2ef;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
     h3.c-ttl-lv4 ERROR
     .c-grid
       .c-row
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-coral<br>テキスト<br>#ff8a65
           div(style="background:#ff8a65;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-coral-ops<br>背景<br>#f2d1c7
           div(style="background:#f2d1c7;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
     h3.c-ttl-lv4 背景
     .c-grid
       .c-row
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-bg<br>ベース<br>#eceff1
           div(style="background:#eceff1;width:100%;height:50px;border:1px solid #c1cbd2;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-bg-sub<br>ラベル背景<br>#dde2e5
           div(style="background:#dde2e5;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-bg-ops<br>下地背景<br>#f4f6f8
           div(style="background:#f4f6f8;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
     h3.c-ttl-lv4 ライン
     .c-grid
       .c-row
-        .c-col.c-col-s-4.c-col-l-3
+        .c-col.c-col-s-6.c-col-l-3
           p $bc-line<br>罫線<br>#c1cbd2
           div(style="background:#c1cbd2;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
 

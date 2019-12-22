@@ -97,6 +97,7 @@ const serverTask = () => {
     https: false // or true
   })
 
+  bs.watch(`${dist}/**/*.js`).on('change', bs.reload)
   bs.watch(`${dist}/**/*.html`).on('change', bs.reload)
   bs.watch(`${dist}/**/*.css`, (e, f) => {
     if (e === 'change') {
