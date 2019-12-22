@@ -8,31 +8,34 @@ const getBook = () => {
   console.log('book----------------');
 
   const book = document.querySelector('.js-book');
-  
 
-  axios.get('https://www.googleapis.com/books/v1/volumes?q=ムーミン')
-    .then(function (response) {
-      // handle success
-      console.log(response);
+  if (book) {
 
-      let html = document.createElement('span');
-      html.innerHTML = response.data.items[0].id;
-      book.appendChild(html);
+    axios.get('https://www.googleapis.com/books/v1/volumes?q=ムーミン')
+      .then(function (response) {
+        // handle success
+        console.log(response);
 
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
+        let img = document.createElement('img');
+        img.src = response.data.items[0].volumeInfo.imageLinks.thumbnail.replace('http', 'https');
+        book.appendChild(img);
 
-  setTimeout(() => {
-    const img = new Image();
-    img.src = '/common/img/online.png';
-    book.appendChild(img);
-  }, 3000);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+
+    setTimeout(() => {
+      const img = new Image();
+      img.src = '/common/img/online.png';
+      book.appendChild(img);
+    }, 3000);
+
+  }
 
 
 };

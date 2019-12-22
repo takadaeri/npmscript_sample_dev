@@ -10,7 +10,7 @@ html(lang="ja")
     meta(name="keywords" content=data.keywords)
     link(rel="stylesheet" href="/common/css/common.css")
     // pwa
-    link(rel="manifest" href="manifest.json")
+    link(rel="manifest" href="/manifest.json")
     link(rel="apple-touch-icon" href="/common/img/apple-touch-icon.png")
     link(rel="shortcut icon" type="image/x-icon" href="/common/img/favicon.ico")
     meta(name="theme-color" content="#edc22e")
@@ -20,7 +20,9 @@ html(lang="ja")
   body
 
     header
-      p SAMPLE SITE
+      a(href="/") STATIC SITE
+      a(href="/detail/") PWA
+
 
     main(role="main")
       #content
