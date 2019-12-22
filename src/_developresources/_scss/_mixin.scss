@@ -1,0 +1,35 @@
+// -------------------------------------
+// margin
+// -------------------------------------
+
+@mixin first-mt0 {
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+@mixin module-mt-def {
+  margin-top: #{$bmt-large};
+}
+@mixin module-mt-large {
+  margin-top: #{$bmt-xlarge};
+}
+
+
+// -------------------------------------
+// media
+// -------------------------------------
+
+//spのみ
+@mixin mqsp {
+  @media screen and (min-width:0) and (max-width:$break-pointPC) {
+    @content
+  }
+}
+
+//pc以上
+@mixin mqpc {
+  @media screen and (min-width:$break-pointPC) {
+    @content
+  }
+}

@@ -2,6 +2,8 @@ extends /theme/default
 include /mixin/module
 
 block content
-  p=data.title
-  p=data.description
-  p=data.keyword
+
+  #article
+    h1=data.title
+    p=data.description
+    p=data.keywords

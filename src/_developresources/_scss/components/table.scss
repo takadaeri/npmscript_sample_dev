@@ -1,0 +1,49 @@
+%c-tbl {
+  @include module-mt-def;
+  border: 1px solid $bc-bg;
+  width: 100%;
+  background: $bc-bg-ops;
+  border-collapse: collapse; 
+
+  th,
+  td {
+    padding: $bmt-medium;
+    border: 1px solid $bc-bg;
+    font-weight: normal;
+  }
+
+  thead th {
+    background: $bc-navy;
+    color: $bc-bg-ops;
+  }
+
+  tbody th {
+    background: $bc-bg-sub;
+    text-align: left;
+  }
+}
+
+.c-tbl {
+  @extend %c-tbl;
+}
+
+
+.c-tbl-tone {
+  @extend %c-tbl;
+
+  thead th {
+    background: $bc-orange;
+  }
+
+  tbody th {
+    background: $bc-yellow-ops;
+  }
+}
+
+
+$margins: (20,30,40,50,60);
+@each $margin in $margins {
+  .c-tbl_w#{$margin}p {
+    width: calc(#{$margin} * 1%);
+  }
+}

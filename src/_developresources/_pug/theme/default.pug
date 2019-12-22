@@ -1,22 +1,24 @@
+block vars
 doctype html
 html(lang="ja")
   head
     meta(name='viewport', content='width=device-width,initial-scale=1')
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
     meta(name="format-detection" content="telephone=no")
-    title title
-    meta(name="description" content="")
-    meta(name="keywords" content="")
+    title=data.title
+    meta(name="description" content=data.description)
+    meta(name="keywords" content=data.keywords)
     link(rel="stylesheet" href="/common/css/common.css")
   body
 
     header
-      p header
+      p SAMPLE SITE
 
     main(role="main")
-      block content
+      #content
+        block content
 
     footer
-      p footer
+      p copyright
 
     script(src="/common/js/common.js" defer)

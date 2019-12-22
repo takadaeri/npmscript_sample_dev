@@ -1,0 +1,64 @@
+$cols: (1,2,3,4,5,6,7,8,9,10,11,12);
+
+
+@each $col in $cols {
+  .c-col-s-#{$col} {
+    width: calc( (100% / 12) * #{$col} - (#{$bmt-medium} + .1px) );
+  }
+}
+
+@include mqpc {
+  @each $col in $cols {
+    .c-col-l-#{$col} {
+      width: calc( (100% / 12) * #{$col} - (#{$bmt-medium} + .1px) );
+    }
+  }
+}
+
+
+.c-grid {
+  width: 100%;
+  @include module-mt-def;
+}
+
+.c-row {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: -#{$bmt-medium};
+  margin-left: -#{$bmt-medium};
+  padding: 0;
+
+  &--tp {
+    align-items: flex-start;
+  }
+
+  &--md {
+    align-items: center;
+  }
+
+  &--bm {
+    align-items: flex-end;
+  }
+
+  &--ct {
+    justify-content: center;
+  }
+
+  &--rt {
+    justify-content: flex-end;
+  }
+
+  & > *:empty {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    visibility: hidden;
+  }
+}
+
+.c-col {
+  flex: none;
+  max-width: 100%;
+  margin: #{$bmt-medium} 0 0 #{$bmt-medium};
+  @include first-mt0;
+}

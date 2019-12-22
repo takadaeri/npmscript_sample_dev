@@ -1,3 +1,16 @@
-body {
-	background: #f1f1f1;
+header {
+  padding: 2.0rem;
+  background: $bc-navy;
+  color: $white;
 }
+
+#content {
+  @include first-mt0;
+}
+
+footer {
+  border-top: 1px solid $bc-line;
+  padding: 2.0rem;
+  text-align: center; 
+}
+

@@ -20,3 +20,11 @@ npmscriptでnpmモジュールを直操作する開発環境です。
 npm run dev
 npm run build
 ```
+## CSS設計
+/index.html にスタイル設計のCSS管理について記載
+- _mixin.scss：mixin関数
+- _value.scss：変数管理
+- components/：コンポーネント
+- init/：リセットCSS、サイトベースCSS
+- structures/：ストラクチャー
+- utility/：ユーティリティ

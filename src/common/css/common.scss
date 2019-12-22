@@ -1,13 +1,19 @@
 
-/* 初期化 */
-@import "init/*.scss";
+@import "_value.scss";
+@import "_mixin.scss";
 
-/* テンプレート */
+/* ress */
+@import "init/ress.scss";
+
+/* base */
+@import "init/base.scss";
+
+/* structures */
 @import "structures/*.scss";
 
-/* コンポーネント化 */
+/* components */
 @import "components/*.scss";
 
-/* ユーティリティ */
+/* utility */
 @import "utility/*.scss";
 

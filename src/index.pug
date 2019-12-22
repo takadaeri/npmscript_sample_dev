@@ -1,7 +1,372 @@
 extends /theme/default
 include /mixin/module
 
+block vars
+
 block content
-  p=data.title
-  p=data.description
-  p=data.keyword
+
+  .article-wide
+    img.u-max-img(src="http://placehold.jp/35/039be5/f4f6f8/1200x300.png?text=SAMPLE SITE")
+  .article
+    h1=data.title
+    p=data.description
+    p CSS設計をしながらデザインルールの精度をあげ、運用のしやすさ・サイト全体の統一性・リソース容量を考慮したサイト構築を実現していく
+
+    h2 TITLES
+    p タイトル要素のfont-size、line-height、上下マージン、単位についてデザイン設計を把握し変数管理する
+    p デザインパターンが増える際も、同じ見出しレベルの設計を維持し管理、統一していく
+    h2 h2タイトル
+    h3 h3タイトル
+    h4 h4タイトル
+    h5 h5タイトル
+    h6 h6タイトル
+
+    h2 COLORS
+    p サイトで使用されるカラーを変数管理し、カラーごとの意味・用途を把握する
+    p 同じ色でも濃い薄いなどパターンの違いがあれば、マトリクス的に設計を管理する
+    h3.c-ttl-lv4 ロゴカラー／トーンカラー／NOTICE
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-yellow<br>ロゴのみ<br>#ffca28
+          div(style="background:#ffca28;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-amber<br>ロゴ／NOTICEテキスト<br>#ffa000
+          div(style="background:#ffa000;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-orange<br>ロゴ／強調テキスト<br>#f57c00
+          div(style="background:#f57c00;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-yellow-ops<br>背景<br>#f1e6bf
+          div(style="background:#f1e6bf;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+    h3.c-ttl-lv4 ベースカラー
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-navy<br>基本<br>#2c384a
+          div(style="background:#2c384a;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-navy-sub<br>サブ<br>#40526c
+          div(style="background:#40526c;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+    h3.c-ttl-lv4 キーカラー
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-blue<br>基本<br>#039be5
+          div(style="background:#039be5;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-blue-sub<br>サブ<br>#45b1e5
+          div(style="background:#45b1e5;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-blue-ops<br>背景<br>#c9e2ef
+          div(style="background:#c9e2ef;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+    h3.c-ttl-lv4 ERROR
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-coral<br>テキスト<br>#ff8a65
+          div(style="background:#ff8a65;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-coral-ops<br>背景<br>#f2d1c7
+          div(style="background:#f2d1c7;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+    h3.c-ttl-lv4 背景
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-bg<br>ベース<br>#eceff1
+          div(style="background:#eceff1;width:100%;height:50px;border:1px solid #c1cbd2;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-bg-sub<br>ラベル背景<br>#dde2e5
+          div(style="background:#dde2e5;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-bg-ops<br>下地背景<br>#f4f6f8
+          div(style="background:#f4f6f8;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+    h3.c-ttl-lv4 ライン
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4.c-col-l-3
+          p $bc-line<br>罫線<br>#c1cbd2
+          div(style="background:#c1cbd2;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
+
+    h2 MARGIN
+    p サイトで使用するマージン設計を変数管理する
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w30p css value
+          th num
+      tbody
+        tr
+          th $bmt-xlarge
+          td 3.0rem
+        tr
+          th $bmt-large
+          td 1.5rem
+        tr
+          th $bmt-medium
+          td 1.0rem
+
+    p.c-txt レイアウト・コンポーネントにおいて使用するマージンを管理し統一していく
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w50p 適用箇所
+          th num
+      tbody
+        tr
+          th レイアウト背景切り替え（上下）
+          td 3.0rem
+        tr
+          th コンポーネント全量（上）
+          td 1.5rem
+        tr
+          th コンポーネント全量（左右、中）
+          td 1.0rem
+
+    p.c-txt マージンの例外があれば、例外項目として管理していく
+    table.c-tbl-tone
+      thead
+        tr
+          th.c-tbl_w50p 例外箇所
+          th num
+      tbody
+        tr
+          th 特定のコンポーネント（下）
+          td 0.3rem
+
+    h2 WIDE CONPONENT
+    p コンポーネントのひとつとしてワイドエリアがある場合、用途を把握し妥当な設計をする
+    p メインビジュアル／コンテンツ自体の区切り／コンテンツの分類分けなどレイアウト用途の場合、コンポーネントではなくストラクチャーとして設計する（コンポーネントのワイドエリアと、レイアウト用途のワイドエリアがほぼ同じデザインになる設計は、用途が不明になるため見直す）
+    .c-wide
+      p ブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネントブラウザ幅のコンポーネント
+
+    h2 GRID
+    p グリッドの分割設計をCSSで設定する
+    p 使用しない分割は、デザインの汎用性が高まる反面、画像サイズの増大などデザイン管理が煩雑化し、CSSの容量も無駄になるため用意しない
+    h3.c-ttl-lv4 11:1
+    .c-grid
+      .c-row
+        .c-col.c-col-s-11
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-1
+          p グリッド
+    h3.c-ttl-lv4 10:2
+    .c-grid
+      .c-row
+        .c-col.c-col-s-10
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 9:3
+    .c-grid
+      .c-row
+        .c-col.c-col-s-9
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-3
+          p グリッドグリッドグリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 8:4
+    .c-grid
+      .c-row
+        .c-col.c-col-s-8
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-4
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 7:5
+    .c-grid
+      .c-row
+        .c-col.c-col-s-7
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-5
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 6:6
+    .c-grid
+      .c-row
+        .c-col.c-col-s-6
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-6
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 4:4:4
+    .c-grid
+      .c-row
+        .c-col.c-col-s-4
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-4
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-4
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 3:3:3:3
+    .c-grid
+      .c-row
+        .c-col.c-col-s-3
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-3
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-3
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-3
+          p グリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッドグリッド
+    h3.c-ttl-lv4 2:2:2:2:2:2
+    .c-grid
+      .c-row
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッドグリッド
+        .c-col.c-col-s-2
+          p グリッドグリッドグリッドグリッドグリッド
+
+    h2 画像サイズ
+    p サイト内で使用する画像サイズの設計を把握する
+
+
+  .article.article--ops
+    p レイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリアレイアウト用途のワイドエリア
+  
+  .article
+    h2 Class Name
+    p CSSの命名規則をルール化し、設計全体の統一を図る
+    p 細かいデザインパターンにおいて、形状と用途を把握し命名規則に組み入れることで、クラス名称間の統一・用途のわかりやすさを実現していく
+    
+    h3.c-ttl-lv4 BEMっぽい記法
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w40p 命名規則
+          th(colspan="3") サンプル
+      tbody
+        tr
+          th B（Block：括り：- ）
+          td.c-tbl_w20p .content
+          td.c-tbl_w20p .c-box
+          td.c-tbl_w20p .c-box-tone
+        tr
+          th E（Element：要素：_ ）
+          td .content_nav<br>.content_main
+          td .c-box_ttl
+          td .c-box-tone_ttl
+        tr
+          th M（Modifier：変更：-- ）
+          td .content--reading
+          td .c-box--rd
+          td .c-box-tone--rd
+
+    h3.c-ttl-lv4 クラス名の分類
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w40p 命名規則
+          th 用途
+      tbody
+        tr
+          th レイアウト名
+          td レイアウト要素
+        tr
+          th c-コンポーネント名（省略形）
+          td コンポーネント要素<br>長い名称はCSSの全体容量に影響を及ぼすので省略する
+        tr
+          th u-ユーティリティ名
+          td ユーティリティクラス<br>SP/PC表示切り替え、画像、マージン、パディング
+        tr
+          th is-ステータス
+          td 状態クラス<br>例）.is-active
+        tr
+          th ページディレクトリ名（省略形）
+          td ページ固有のスタイルクラス<br>長い名称はCSSの全体容量に影響を及ぼすので省略する
+        tr
+          th js-
+          td javascript用のクラス名、スタイルは指定しない
+    
+    h3.c-ttl-lv4 種別とパターンの命名規則
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p 命名規則
+          th.c-tbl_w30p 種別
+          th 用途
+      tbody
+        tr
+          th (B)-sp, (B)-pc
+          td ディスプレイ別
+          td SP用のスタイル, PC用のスタイル
+        tr
+          th (B)-s, (B)-l, (B)-xs, (B)-xl
+          td サイズ別
+          td smallサイズ、largeサイズ、xが増えるごとにワンサイズ縮小／拡大
+
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p 命名規則
+          th.c-tbl_w30p パターン
+          th 用途
+      tbody
+        tr
+          th (BE)--rt, (BE)--lt, (BE)--ct<br>(BE)--tp, (BE)--md, (BE)--bm
+          td 寄せパターン
+          td 右寄せ、左寄せ、中央寄せ（right,left,center）<br>上寄せ、天地中央、下寄せ（top,middle,bottom）
+        tr
+          th (BE)--rd
+          td 角丸パターン
+          td パターンに角丸（round）がある時に使用
+            p.c-txt 角丸パターン使用時の意味あいがある場合は、形状よりも意味名をつけたほうが、[用途]が明確になる（例えば、意味あい「特別」：--ex）<br>角丸がでてきたらデザインなのかパターンなのか、パターンならどういう意味なのか確認する
+    p.c-txt パターン名称が増えた際は項目を追加し管理していく
+
+
+    h2 単位
+    p 使用する単位の統一を図る
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p 適用項目
+          th.c-tbl_w30p 単位
+          th 備考
+      tbody
+        tr
+          th font-size
+          td rem
+          td html{font-size:62.5%}を基準とした単位、htmlのフォントサイズ変更で大きさを変えられるように作成する<br>（例：10px → 1.0rem）
+        tr
+          th width
+          td %, fr, rem, px
+          td レイアウトの大きな括りはhtmlのフォントサイズ変更で変わると崩れの原因になるためpxを使用する
+        tr
+          th margin, padding
+          td rem
+          td remにしておくことでhtmlのフォントサイズ変更でフォントに合わせて変わるように作成する
+        tr
+          th border
+          td px
+          td 罫線は変化してはいけないためpxを使用
+
+    h2 ファイル名
+    p 使用するファイル名の統一を図る
+
+    h3.c-ttl-lv4 画像
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p 適用項目
+          th 命名規則
+      tbody
+        tr
+          th バナー
+          td bnr-[ファイル固有名]-000x000[サイズ]
+        tr
+          th アイコン
+          td ico-[ファイル固有名]
+        tr
+          th サムネイル
+          td thumb-[ファイル固有名]
+        tr
+          th 背景
+          td bg-[ファイル固有名]
+        tr
+          th その他の画像
+          td img-[ファイル固有名]
+

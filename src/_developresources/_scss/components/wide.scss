@@ -1,0 +1,30 @@
+.c-wide {
+  @include module-mt-def;
+  padding: $bmt-large 0;
+  background: $bc-bg-ops;
+  position: relative;
+
+  &:after,
+  &:before {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: $bc-bg-ops;
+    display: block;
+    content: '';
+    top: 0;
+    z-index: -1;
+  }
+
+  &:after {
+    left: 0;
+  }
+
+  &:before {
+    right: 0;
+  }
+
+  & + .c-wide {
+    margin-top: 0;
+  }
+}
