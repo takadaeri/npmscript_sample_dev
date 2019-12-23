@@ -28,3 +28,8 @@ npm run build
 - init/：リセットCSS、サイトベースCSS
 - structures/：ストラクチャー
 - utility/：ユーティリティ
+
+## PWA対応
+ホームアイコン追加、manifest.json、service workerのプリキャッシュとランタイムキャッシュに対応
+- manifest.json, 各種アイコン は create-pwa を使用 （良い感じに組み込めるPWAのモジュールが無かったので手動でディレクトリ移動）
+- service worker は workbox を使用
