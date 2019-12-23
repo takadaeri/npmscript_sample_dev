@@ -1,0 +1,23 @@
+.c-card {
+  background: $bc-bg-ops;
+  box-shadow: $b-shadow-def;
+  border-radius: $br-comp-def;
+  display: block;
+  color: $bc-txt;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &_ttl {
+    font-weight: bold;
+    padding: $bmt-large;
+    line-height: $bl-small;
+    border-bottom: 1px solid $bc-line;
+  }
+
+  &_thum {
+    padding: $bmt-large;
+    text-align: center;
+  }
+}

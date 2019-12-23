@@ -7,6 +7,12 @@
   margin-right: -15px;
   overflow: hidden;
 
+  @include mqpc {
+    margin-left: 0;
+    margin-right: 0;
+    overflow: visible;
+  }
+
   &:after,
   &:before {
     position: absolute;
