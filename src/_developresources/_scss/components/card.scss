@@ -21,3 +21,34 @@
     text-align: center;
   }
 }
+
+
+.c-card-like {
+  position: relative;
+  margin: 5px;
+  box-shadow: $b-shadow-def;
+  border-radius: $br-comp-def;
+  display: block;
+
+  img {
+    border-radius: $br-comp-def;
+    overflow: hidden;
+  }
+
+  &_like {
+    position: absolute;
+    bottom: -.6rem;
+    right: -.6rem;
+    width: 5.0rem;
+    height: 5.0rem;
+    padding: .5rem;
+    display: flex;
+    border-radius: 50%;
+    background: $bc-orange;
+    box-shadow: $b-shadow-def;
+    align-items: center;
+    justify-content: center;
+    color: $bc-bg-ops;
+    font-weight: bold;
+  }
+}

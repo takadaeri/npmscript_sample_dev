@@ -89,7 +89,8 @@ block content
           div(style="background:#c1cbd2;width:100%;height:50px;border-radius:8px;box-shadow:0 1px 5px rgba(0,0,0,.1)")
 
     h2 TEXT
-    p サイトで使用するテキストのfont-size、line-height設計を変数管理する
+    p サイトで使用するテキストのfont-size、line-heightの設計を変数管理する
+    p 合わせてfont-family、こだわりがあればフォント間隔も確認する（セットによってはデザインを再現できないOSがあるため）
     h3.c-ttl-lv4 フォントサイズ
     table.c-tbl
       thead
@@ -262,6 +263,25 @@ block content
 
     h2 画像サイズ
     p サイト内で使用する画像サイズの設計を把握する
+    p レスポンス時は半端な数値になるが、デザインの基準としたSPサイズ、PCサイズ上ではハマるサイズを設計する
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p 画像種類
+          th -
+      tbody
+        tr
+          th メインビジュアル
+          td 000x000[サイズ]
+        tr
+          th サムネイル（大）
+          td 000x000[サイズ]
+        tr
+          th サムネイル（中）
+          td 000x000[サイズ]
+        tr
+          th サムネイル（小）
+          td 000x000[サイズ]
 
 
   .article.article--ops
@@ -337,6 +357,10 @@ block content
           th (B)-s, (B)-l, (B)-xs, (B)-xl
           td サイズ別
           td smallサイズ、largeサイズ、xが増えるごとにワンサイズ縮小／拡大
+        tr
+          th (B)-lt, (B)-rt, (B)-ct
+          td 寄せ別
+          td right,center など寄せを要素名にそのまま使用する場合（例、テキストなど変形パターンで用意するような規模でないもの）
 
     table.c-tbl
       thead
@@ -353,7 +377,12 @@ block content
           th (BE)--rd
           td 角丸パターン
           td パターンに角丸（round）がある時に使用
-            p.c-txt 角丸パターン使用時の意味あいがある場合は、形状よりも意味名をつけたほうが、[用途]が明確になる（例えば、意味あい「特別」：--ex）<br>角丸がでてきたらデザインなのかパターンなのか、パターンならどういう意味なのか確認する
+            p.c-txt 角丸パターン使用時の意味あいがある場合は、形状よりも意味名をつけたほうが、[用途]が明確になる（例えば、意味あい「特別」：--ex）<br>角丸がでてきたらデザインなのかパターンなのか、パターンならどういう意図なのか確認する
+        tr
+          th (BE)--dash, (BE)--dot
+          td 罫線パターン
+          td パターンにダッシュ線やドット線がある時に使用
+            p.c-txt 角丸パターン同様、形状よりも意味名をつけたほうが良いので、パターンとして出てきた際は意図を確認する
     p.c-txt パターン名称が増えた際は項目を追加し管理していく
 
 

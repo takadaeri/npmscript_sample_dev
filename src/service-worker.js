@@ -31,10 +31,10 @@ workbox.routing.registerRoute(
 // // ---------------------------------------
 // // SWのキャッシュを削除する
 // // ---------------------------------------
-// // ncaches.keys().then(function(names) {
-// //     for (let name of names)
-// //         caches.delete(name);
-// // });
+// ncaches.keys().then(function(names) {
+//     for (let name of names)
+//         caches.delete(name);
+// });
 
 
 

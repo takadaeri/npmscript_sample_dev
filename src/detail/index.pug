@@ -4,12 +4,21 @@ include /mixin/module
 block content
 
   .article
+
+    h4 Firebase Offline Test
+    p 好きな画像をクリックしよう。
+    .c-grid
+      .c-row.js-likelist
+    template(id="likedata")
+      .c-col.c-col-s-6.c-col-l-3
+        a.c-card-like(data-id="item0")
+          img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg")
+          span.c-card-like_like 0
+
     h4 Service Worker Offline Test
     .js-book 
-
     .c-grid
       ul.c-row
-
     template(id="productrow")
       li.c-col.c-col-s-12.c-col-l-6
         a.c-card
