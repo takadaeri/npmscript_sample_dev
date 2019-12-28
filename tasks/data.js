@@ -1,6 +1,4 @@
-/**
- * metaデータ、ファイルリストデータ生成タスク
- */
+// metaデータ、ファイルリストデータ生成タスク
 
 const xlsx = require('xlsx') // エクセルからjson生成する
 const workbook = xlsx.readFile('./src/_developresources/_pug/data/sitemap.xlsx')

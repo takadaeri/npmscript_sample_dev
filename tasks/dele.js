@@ -1,8 +1,6 @@
-/**
- * 削除タスク
- * @param {glob} src - 削除対象のファイルパス
- * @param {function} cb - 削除完了後に走らせる関数
- */
+// 削除タスク
+// @param {glob} src - 削除対象のファイルパス
+// @param {function} cb - 削除完了後に走らせる関数
 
 const del = require('del') // 削除モジュール
 

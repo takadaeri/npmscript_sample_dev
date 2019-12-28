@@ -1,9 +1,7 @@
-/**
- * cssタスク
- * @param {string} src - scssファイル群が入っているディレクトリのルート
- * @param {string} dist - 出力されるcssファイルのディレクトリのルート
- * @param {boolean} isDev - 開発フラグの有無
- */
+// cssタスク
+// @param {string} src - scssファイル群が入っているディレクトリのルート
+// @param {string} dist - 出力されるcssファイルのディレクトリのルート
+// @param {boolean} isDev - 開発フラグの有無
 
 const sass = require('node-sass') // node用sass
 const nodeSassGlobbing = require('node-sass-glob-importer') // sassファイル内でglobを使用する node-sass-globbingがダメなのでこっち

@@ -15,6 +15,7 @@ const html = require('./html') // html（pug）
 const sass = require('./sass') // css（scss）
 const image = require('./image') // image
 const script = require('./script') // webpack
+const workbox = require('./workbox') // workbox
 const watch = require('./watch') // watch
 
 /************************************************
@@ -64,6 +65,9 @@ const imageTask = (f) => {
 }
 const scriptTask = () => {
   script()
+}
+const workboxTask = () => {
+  workbox()
 }
 
 /************************************************
@@ -119,6 +123,7 @@ dele(dist, () => {
   cssTask()
   imageTask()
   scriptTask()
+  workboxTask()
   if (isDev) {
     // 開発中はwatchとサーバーも走らせる
     watchTasks()

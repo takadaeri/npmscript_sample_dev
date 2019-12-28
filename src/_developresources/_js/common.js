@@ -26,22 +26,35 @@ new getDatabase(window.firebase);
 import getBook from '@/modules/getBook';
 getBook();
 
+import cloudMessaging from '@/modules/cloudMessaging';
+new cloudMessaging(window.firebase);
+
 
 // ---------------------------------------------------------------
 // serviceWorker
 // ---------------------------------------------------------------
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js').then(
+  navigator.serviceWorker.register('/service-worker.js', {scope:'/'}).then(
     registration => {
       console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-      registration.onupdatefound = function() {
-        console.log('アップデートがあるのでアップデート');
-        registration.update();
-      };
+      // registration.onupdatefound = function() {
+      //   console.log('アップデートがあるのでアップデート');
+      //   registration.update();
+      // };
     },
     error => {
       console.log(`ServiceWorker registration failed: ${error}`);
     }
   );
+
+  navigator.serviceWorker.register('/firebase-messaging-sw.js').then(
+    registration => {
+      console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+    },
+    error => {
+      console.log(`ServiceWorker registration failed: ${error}`);
+    }
+  );
+
 }

@@ -24,7 +24,7 @@ export default class getDatabase {
     if (template) {
 
       // // ========== EX : firebase : firestore ==========
-      let wrap = document.querySelector('.js-likelist');      
+      let wrap = document.querySelector('.js-likelist');
       this.db.collection('moomins').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
               // console.log(`${doc.id} => ${doc.data()}`);
@@ -83,13 +83,19 @@ export default class getDatabase {
 
   likeplus(itemId, num) {
 
-    this.db.collection('moomins').doc(itemId).collection('vote').add({}).then(function(docRef) {
-        console.log('Document written with ID: ', docRef.id);
-        let button = document.querySelectorAll('.js-likelist a[data-id="' + itemId + '"] span');
-        button[0].textContent = num;
-    }).catch(function(error) {
-        console.error('Error adding document: ', error);
-    });
+    let online = navigator.onLine;
+    if(online) {
+      this.db.collection('moomins').doc(itemId).collection('vote').add({}).then(function(docRef) {
+          console.log('Document written with ID: ', docRef.id);
+          let button = document.querySelectorAll('.js-likelist a[data-id="' + itemId + '"] span');
+          button[0].textContent = num;
+      }).catch(function(error) {
+          console.error('Error adding document: ', error);
+      });
+    } else {
+      alert('1票追加しました');
+      location.reload();
+    }
 
     // // ========== EX : firebase : real time database ==========
     // this.firebase.database().ref('moomins/' + itemId).push({'likeaaa': num});

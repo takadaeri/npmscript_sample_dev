@@ -1,9 +1,7 @@
-/**
- * pugタスク
- * @param {string} src - htmlファイル群が入っているディレクトリのルート
- * @param {string} dist - 出力先のディレクトリのルート
- * @param {object} data - pugで使用するデータ
- */
+// pugタスク
+// @param {string} src - htmlファイル群が入っているディレクトリのルート
+// @param {string} dist - 出力先のディレクトリのルート
+// @param {object} data - pugで使用するデータ
 
 const pug = require('pug') // pugモジュール
 const fs = require('fs-extra') // ディレクトリを再帰的に作成

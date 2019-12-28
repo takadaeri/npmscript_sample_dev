@@ -1,8 +1,6 @@
-/**
- * 監視タスク
- * @param {glob} src - 監視対象のファイルパス
- * @param {function} cb - ファイル更新後に走らせる関数
- */
+// 監視タスク
+// @param {glob} src - 監視対象のファイルパス
+// @param {function} cb - ファイル更新後に走らせる関数 
 
 const chokidar = require('chokidar') //ファイル監視モジュール
 

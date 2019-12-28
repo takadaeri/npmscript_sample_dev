@@ -1,8 +1,6 @@
-/**
- * コピータスク
- * @param {string} src - コピー対象のファイルパス
- * @param {string} dist - コピー先のファイルパス
- */
+// コピータスク
+// @param {string} src - コピー対象のファイルパス
+// @param {string} dist - コピー先のファイルパス
 
 const fs = require('fs-extra') // ディレクトリを再帰的に作成
 const glob = require('glob') // ファイル名のパターンマッチング

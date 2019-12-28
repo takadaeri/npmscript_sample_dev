@@ -1,8 +1,6 @@
-/**
- * imageタスク
- * @param {string} src - imageファイル群が入っているディレクトリのルート
- * @param {string} dist - 出力先のディレクトリのルート
- */
+// imageタスク
+// @param {string} src - imageファイル群が入っているディレクトリのルート
+// @param {string} dist - 出力先のディレクトリのルート
 
 const imagemin = require('imagemin') // imageminモジュール
 const imageminMozjpeg = require('imagemin-mozjpeg') // imagemin jpgモジュール

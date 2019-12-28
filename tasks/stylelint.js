@@ -1,7 +1,5 @@
-/**
- * stylelintタスク
- * @param {string} src - sstylelint対象ファイルが入っているディレクトリのルート
- */
+// stylelintタスク
+// @param {string} src - sstylelint対象ファイルが入っているディレクトリのルート
 
 const stylelint = require('stylelint') // stylelintモジュール
 const glob = require('glob') // ファイル名のパターンマッチング
