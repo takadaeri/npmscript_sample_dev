@@ -2,6 +2,12 @@
 // workboxバージョン
 // ---------------------------------------------------
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+if (workbox) {
+  console.log(`Workbox is loaded`);
+} else {
+  console.log(`Workbox didn't load`);
+}
+
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 workbox.navigationPreload.enable();
@@ -13,13 +19,32 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+  new RegExp('/detail/'),
+  new workbox.strategies.StaleWhileRevalidate()
+);
+
+workbox.routing.registerRoute(
   new RegExp('https://www.googleapis.com/'),
   new workbox.strategies.CacheFirst({
     cacheName: 'api',
-    maxEntries: 10,
+    maxEntries: 50,
     plugins: [
       new workbox.expiration.Plugin({
-        maxAgeSeconds: 60 * 60 * 24, // 1day
+        maxAgeSeconds: 60 * 60 * 24,
+        purgeOnQuotaError: true
+      }),
+    ],
+  })
+);
+
+workbox.routing.registerRoute(
+  new RegExp('https://books.google.com/'),
+  new workbox.strategies.CacheFirst({
+    cacheName: 'apibook',
+    maxEntries: 20,
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxAgeSeconds: 60 * 60 * 24,
         purgeOnQuotaError: true
       }),
     ],
@@ -27,6 +52,29 @@ workbox.routing.registerRoute(
 );
 
 
+// chrome ------------
+// The service worker navigation preload request failed with network error: net::ERR_INTERNET_DISCONNECTED.
+
+// firefox ------------
+// Could not reach Cloud Firestore backend. Connection failed 1 times. Most recent error: FirebaseError: [code=unavailable]: The operation could not be completed
+// This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+
+
+
+
+// workbox.routing.registerRoute(
+//   new RegExp('https://www.gstatic.com/'),
+//   new workbox.strategies.CacheFirst({
+//     cacheName: 'api2',
+//     maxEntries: 10,
+//     plugins: [
+//       new workbox.expiration.Plugin({
+//         maxAgeSeconds: 60 * 60 * 24, // 1day
+//         purgeOnQuotaError: true
+//       }),
+//     ],
+//   })
+// );
 
 // // ---------------------------------------
 // // SWのキャッシュを削除する

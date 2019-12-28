@@ -12,6 +12,21 @@ header {
       background: $bc-navy-sub;
     }
   }
+
+  button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: $white;
+    padding: $bmt-medium;
+    font-size: $bf-xsmall;
+    opacity: $bo-half;
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
 }
 
 #content {

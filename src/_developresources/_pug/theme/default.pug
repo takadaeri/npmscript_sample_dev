@@ -13,15 +13,16 @@ html(lang="ja")
     link(rel="manifest" href="/manifest.json")
     link(rel="apple-touch-icon" href="/common/img/apple-touch-icon.png")
     link(rel="shortcut icon" type="image/x-icon" href="/common/img/favicon.ico")
-    meta(name="theme-color" content="#edc22e")
-    meta(name="msapplication-TileColor" content="#edc22e")
+    meta(name="theme-color" content="#2c384a")
+    meta(name="msapplication-TileColor" content="#2c384a")
     meta(name="application-name" content="sampleDev")
     meta(name="msapplication-config" content="config.xml")
   body
 
     header
       a(href="/") STATIC SITE
-      a(href="/detail/") PWA
+      a(href="/detail/") PWA DATA
+      button.js-navigator onlineSW
 
 
     main(role="main")
@@ -31,4 +32,23 @@ html(lang="ja")
     footer
       p copyright
 
+
+    script(src="/common/js/firebase-app.7.6.1.min.js")
+    script(src="/common/js/firebase-firestore.7.6.1.min.js")
+    script.
+      var firebaseConfig = {
+        apiKey: "AIzaSyAqT7aqDkWakeIwh_VrqPDhWt2xjF9A5_A",
+        authDomain: "sampledev-15072.firebaseapp.com",
+        databaseURL: "https://sampledev-15072.firebaseio.com",
+        projectId: "sampledev-15072",
+        storageBucket: "sampledev-15072.appspot.com",
+        messagingSenderId: "805023177198",
+        appId: "1:805023177198:web:bffebc603d6911aa9696ff",
+        measurementId: "G-VJ23V006HL"
+      };
+      firebase.initializeApp(firebaseConfig);
     script(src="/common/js/common.js" defer)
+
+
+
+
