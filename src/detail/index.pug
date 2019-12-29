@@ -3,10 +3,12 @@ include /mixin/module
 
 block content
 
+  .article-wide
+    img.u-max-img(src="/common/img/1200x300.png")
   .article
 
-    h4 Firebase Offline Test
-    p 好きな画像をクリックしよう。
+    h4 Cloud Firestore : Offline Test
+    p Firebaseのデータベース「Firestore」の挙動テスト。「Realtime Database」はウェブ版ではオフラインに非対応のため、オフラインキャッシュに対応している「Firestore」を使用する。json形式ではなく、doc,data形式となる。
     .c-grid
       .c-row.js-likelist
     template(id="likedata")
@@ -15,7 +17,8 @@ block content
           img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg")
           span.c-card-like_like 0
 
-    h4 Service Worker Offline Test 
+    h4 Google books API : Offline Test 
+    p Service Workerで「https://www.googleapis.com/」「https://books.google.com/」をキャッシュしている状態での挙動テスト。
     .c-grid
       ul.c-row.js-booklist
     template(id="productrow")

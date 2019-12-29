@@ -1,0 +1,30 @@
+extends /theme/default
+include /mixin/module
+
+block content
+
+  .article.js-fcm
+
+    h4 Firebase Cloud Messaing
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w30p FCM setting
+          th value
+      tbody
+        tr
+          th FCM通知許可
+          td.js-fcm_enable 
+        tr
+          th あなたの現在のトークン
+          td.js-fcm_yourtoken 
+
+    p.c-txt 通知をリクエストすると、クライアント側から受信をオフにすることはできない。<br>サーバー側で、ユーザーのAuth認証を行い、Usersテーブルを用意、トークンとプッシュ通知の受信可否を管理し、通知する際にフィルターをかけ送信するという運用が必要。
+
+    .c-btn-wrap
+      .c-grid
+        .c-row.c-row--ct
+          .c-col.c-col-s-6.c-col-l-4
+            button.c-btn.js-fcm_request 通知をリクエストする
+          .c-col.c-col-s-6.c-col-l-4
+            button.c-btn.c-btn-delete.js-fcm_delete 現在のトークンを削除する

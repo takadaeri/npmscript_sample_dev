@@ -1,3 +1,16 @@
 .c-txt {
   @include module-mt-def;
 }
+
+
+.c-txt-lt {
+  text-align: left !important;
+}
+
+.c-txt-ct {
+  text-align: center !important;	
+}
+
+.c-txt-rt {
+  text-align: right !important;
+}

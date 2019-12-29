@@ -29,7 +29,7 @@ const workbox = () => {
       },
       {
           urlPattern: /.+\.(js|css|woff|json)$/,
-          handler: "CacheFirst",
+          handler: "StaleWhileRevalidate",
           options: {
               cacheName: cacheId + "-dependent-cache",
               expiration: {
@@ -49,7 +49,7 @@ const workbox = () => {
       },
       {
           urlPattern: new RegExp('https://www.googleapis.com/'),
-          handler: "CacheFirst",
+          handler: "StaleWhileRevalidate",
           options: {
               cacheName: cacheId + "-bookapi-cache",
               expiration: {
@@ -59,7 +59,7 @@ const workbox = () => {
       },
       {
           urlPattern: new RegExp('https://books.google.com/'),
-          handler: "CacheFirst",
+          handler: "StaleWhileRevalidate",
           options: {
               cacheName: cacheId + "-bookimg-cache",
               expiration: {

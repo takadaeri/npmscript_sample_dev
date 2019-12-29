@@ -13,7 +13,7 @@ header {
     }
   }
 
-  button {
+  p {
     position: fixed;
     top: 0;
     right: 0;
@@ -21,12 +21,23 @@ header {
     padding: $bmt-medium;
     font-size: $bf-xsmall;
     opacity: $bo-half;
-    display: none;
+
+    &:after {
+      display: block;
+      content: 'offline';
+    }
 
     &.is-active {
-      display: block;
+      &:after {
+        content: 'online';
+      }
     }
   }
+}
+
+.head-delete-tkn {
+  top: 25px;
+  display: block;
 }
 
 #content {

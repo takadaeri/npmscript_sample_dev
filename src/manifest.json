@@ -9,7 +9,7 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"scope": "/",
-	"start_url": "/?standalone=true",
+	"start_url": "/",
 	"gcm_sender_id": "805023177198",
 	"icons": [
 	{

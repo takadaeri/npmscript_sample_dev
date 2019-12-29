@@ -20,9 +20,10 @@ html(lang="ja")
   body
 
     header
-      a(href="/") STATIC SITE
-      a(href="/detail/") PWA DATA
-      button.js-navigator onlineSW
+      a(href="/") STATIC PAGE
+      a(href="/detail/") AJAX
+      a(href="/push/") PUSH
+      p.js-navigator
 
 
     main(role="main")
@@ -32,22 +33,10 @@ html(lang="ja")
     footer
       p copyright
 
-
-    script(src="/common/js/firebase-app.7.6.1.min.js")
-    script(src="/common/js/firebase-firestore.7.6.1.min.js")
-    script(src="/common/js/firebase-messaging.7.6.1.min.js")
-    script.
-      var firebaseConfig = {
-        apiKey: "AIzaSyAqT7aqDkWakeIwh_VrqPDhWt2xjF9A5_A",
-        authDomain: "sampledev-15072.firebaseapp.com",
-        databaseURL: "https://sampledev-15072.firebaseio.com",
-        projectId: "sampledev-15072",
-        storageBucket: "sampledev-15072.appspot.com",
-        messagingSenderId: "805023177198",
-        appId: "1:805023177198:web:bffebc603d6911aa9696ff",
-        measurementId: "G-VJ23V006HL"
-      };
-      firebase.initializeApp(firebaseConfig);
+    script(src="/common/js/firebase/firebase-app.7.6.1.min.js")
+    script(src="/common/js/firebase/firebase-firestore.7.6.1.min.js")
+    //- script(src="/common/js/firebase/firebase-messaging.7.6.1.min.js")
+    script(src="/common/js/firebase/myfirebase.js")
     script(src="/common/js/common.js" defer)
 
 

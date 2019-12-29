@@ -26,8 +26,11 @@ new getDatabase(window.firebase);
 import getBook from '@/modules/getBook';
 getBook();
 
-import cloudMessaging from '@/modules/cloudMessaging';
-new cloudMessaging(window.firebase);
+// import cloudMessaging from '@/modules/cloudMessaging';
+// let fcm = document.querySelectorAll('.js-fcm');
+// fcm.forEach(()=> {
+//   new cloudMessaging(window.firebase);
+// });
 
 
 // ---------------------------------------------------------------
@@ -35,26 +38,21 @@ new cloudMessaging(window.firebase);
 // ---------------------------------------------------------------
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js', {scope:'/'}).then(
-    registration => {
-      console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-      // registration.onupdatefound = function() {
-      //   console.log('アップデートがあるのでアップデート');
-      //   registration.update();
-      // };
-    },
-    error => {
-      console.log(`ServiceWorker registration failed: ${error}`);
-    }
-  );
-
-  navigator.serviceWorker.register('/firebase-messaging-sw.js').then(
-    registration => {
-      console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
-    },
-    error => {
-      console.log(`ServiceWorker registration failed: ${error}`);
-    }
-  );
-
+  window.addEventListener('load', function() {
+    console.log('loaded');
+    navigator.serviceWorker.register('/service-worker.js', {scope:'/'}).then(
+      registration => {
+        console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+      },
+      error => {
+        console.log(`ServiceWorker registration failed: ${error}`);
+      });
+    // navigator.serviceWorker.register('/push/firebase-messaging-sw.js', {scope:'/push/'}).then(
+    //   registration => {
+    //     console.log(`ServiceWorker registration successful with scope: ${registration.scope}`);
+    //   },
+    //   error => {
+    //     console.log(`ServiceWorker registration failed: ${error}`);
+    //   });
+  });
 }
