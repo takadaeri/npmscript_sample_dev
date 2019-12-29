@@ -25,7 +25,7 @@ if (NODE_ENV === 'dev') {
 webpackConfig = Object.assign(webpackConfig, {
   entry: {
     'common': src + '/common.js',
-    'detail/index': src + '/detail/index.js'
+    'push/index': src + '/push/index.js'
   },
   output: {
     filename: '[name].js',

@@ -3,9 +3,14 @@ include /mixin/module
 
 block content
 
+  .article-wide
+    img.u-max-img(src="/common/img/1200x300.png" alt="sample")
   .article.js-fcm
 
-    h4 Firebase Cloud Messaing
+    h1 PUSH通知
+    p サーバーからブラウザを通じてデスクトップ通知する「Push API」を使用したFCMサービスの挙動テスト。
+    
+    h2 Firebase Cloud Messaing
     table.c-tbl
       thead
         tr
@@ -13,13 +18,17 @@ block content
           th value
       tbody
         tr
-          th FCM通知許可
+          th FCM通知許可ステータス
           td.js-fcm_enable 
         tr
           th あなたの現在のトークン
           td.js-fcm_yourtoken 
 
-    p.c-txt 通知をリクエストすると、クライアント側から受信をオフにすることはできない。<br>サーバー側で、ユーザーのAuth認証を行い、Usersテーブルを用意、トークンとプッシュ通知の受信可否を管理し、通知する際にフィルターをかけ送信するという運用が必要。
+    p.c-txt 通知をリクエストすると、クライアント側から受信をオフにすることはできない。<br>通知リクエスト時に、サーバー側でユーザーのAuth認証を行い、Usersテーブルを用意、トークンとプッシュ通知の受信可否を管理し、通知する際にフィルターをかけ送信するという運用が必要。
+    p.c-txt ページを開いてすぐリクエストが飛ぶやり方はユーザーに嫌がられているため、通知許可用のボタンを用意するのが良い。同じく通知しない用のボタンも用意する必要がある。サービスにおけるプッシュ通知の需要をちゃんと考える必要がある。
+    p.c-txt 通知許可のUX的に、ユーザー管理データベースは必要になるが、プッシュ配信するサーバーや管理画面なども必要。FCMは管理画面からプッシュを送信できるのでサンプルとして扱いやすいが、実際の運用では、管理画面を配信に使用する、FCMを連携させる、AWSのラムダを使用するなどがある。
+    p.c-txt ひとつのディレクトリ配下を制御できるService Workerはひとつになるので、FCMでプッシュ通知する場合、サイト全体用とFCM用の2つのService Workerを使用することになる。Service Workerの適用範囲はスコープで設定できるため、ディレクトリを分けて設定する。ページで後から読み込まれたものが制御するService Workerになる。
+    p.c-txt Service Workerは自作できるが、イベントが簡易化されキャッシュ管理がしやすいworkboxを使う場合が多い。webpackなどのモジュールが多く出ているので使いやすい。プッシュ通知など独自のイベントをひとつのsw.jsにしたい場合は、自作する必要がある。
 
     .c-btn-wrap
       .c-grid
@@ -28,3 +37,7 @@ block content
             button.c-btn.js-fcm_request 通知をリクエストする
           .c-col.c-col-s-6.c-col-l-4
             button.c-btn.c-btn-delete.js-fcm_delete 現在のトークンを削除する
+
+
+block script
+  script(src="/common/js/push/index.js" defer)

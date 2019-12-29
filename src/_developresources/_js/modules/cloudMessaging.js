@@ -19,7 +19,8 @@ export default class cloudMessaging {
   }
 
   event() {
-    this.request();
+
+    this.viewTokun();
     
     this.requestBtn.onclick = ()=>{
         this.request();
@@ -69,6 +70,17 @@ export default class cloudMessaging {
 
   }
 
+  viewTokun() {
+    // 現在の登録トークンの取得
+    this.messaging.getToken().then( (token) => {
+      if (token) {
+        this.fcmenable.innerText = 'OK';
+        this.yourtoken.innerText = token;
+      } else {
+        console.log('使用可能なインスタンスIDトークンはありません。通知許可をリクエストしてください。');
+      }
+    });
+  }
 
   deleteToken() {
     // トークンを取得できるか確認

@@ -23,7 +23,7 @@ html(lang="ja")
       a(href="/") STATIC PAGE
       a(href="/detail/") AJAX
       a(href="/push/") PUSH
-      p.js-navigator
+      p.js-navoffline
 
 
     main(role="main")
@@ -35,9 +35,10 @@ html(lang="ja")
 
     script(src="/common/js/firebase/firebase-app.7.6.1.min.js")
     script(src="/common/js/firebase/firebase-firestore.7.6.1.min.js")
-    //- script(src="/common/js/firebase/firebase-messaging.7.6.1.min.js")
+    script(src="/common/js/firebase/firebase-messaging.7.6.1.min.js")
     script(src="/common/js/firebase/myfirebase.js")
     script(src="/common/js/common.js" defer)
+    block script
 
 
 

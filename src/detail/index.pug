@@ -4,20 +4,23 @@ include /mixin/module
 block content
 
   .article-wide
-    img.u-max-img(src="/common/img/1200x300.png")
+    img.u-max-img(src="/common/img/1200x300.png" alt="sample")
   .article
 
-    h4 Cloud Firestore : Offline Test
+    h1 非同期通信のオフラインキャッシュ
+    p PWA対応のひとつとして、サイト内のすべてのリソースをService Workerでキャッシュしオフラインでも閲覧可能にする。それの非同期通信部分のテスト。
+    h2 Cloud Firestore : Offline Test
     p Firebaseのデータベース「Firestore」の挙動テスト。「Realtime Database」はウェブ版ではオフラインに非対応のため、オフラインキャッシュに対応している「Firestore」を使用する。json形式ではなく、doc,data形式となる。
+    p.c-txt FirebaseのHostingサービスの無料版ではGoogleAPI以外はCORSエラーが起きる＆そもそもFirestoreでServicce Workerが使われていそうなので、Firestoreドメインに紐づくものはサイト側でキャッシュしていない。
     .c-grid
       .c-row.js-likelist
     template(id="likedata")
       .c-col.c-col-s-6.c-col-l-3
         a.c-card-like(data-id="item0")
-          img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg")
+          img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg" alt="")
           span.c-card-like_like 0
 
-    h4 Google books API : Offline Test 
+    h2 Google books API : Offline Test 
     p Service Workerで「https://www.googleapis.com/」「https://books.google.com/」をキャッシュしている状態での挙動テスト。
     .c-grid
       ul.c-row.js-booklist
@@ -26,5 +29,5 @@ block content
         a.c-card
           p.c-card_ttl
           .c-card_thum
-            img
+            img(alt="")
 
