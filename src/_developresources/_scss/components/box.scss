@@ -1,0 +1,52 @@
+%c-box {
+  @include module-mt-large;  
+  @include first-mt0;
+  background: $bc-bg-ops;
+  border: 1px solid $bc-line;
+  border-radius: $br-comp-def;
+  display: block;
+  padding: $bmt-large;
+  width: 100%;
+}
+
+
+// 通常サイズ
+
+.c-box {
+  @extend %c-box;
+
+  &--ht100 {
+    height: 100%;
+  }
+}
+
+.c-box_ttl {
+  color: $bc-navy;
+  font-size: $bf-h4;
+  text-align: center;
+}
+
+.c-box_cnt {
+  @include first-mt0;
+}
+
+
+.c-box-notice {
+  @extend %c-box;
+  border-color: $bc-orange;
+}
+
+.c-box-notice_ttl {
+  color: $bc-orange;
+  font-size: $bf-h4;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    @extend .c-font;
+    @extend %c-font-kuma_set;
+    font-size: 3.4rem;
+    margin-right: .8rem;
+    transform: translateY(.2rem);
+  }
+}

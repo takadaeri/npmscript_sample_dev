@@ -3,10 +3,10 @@ header {
   display: flex;
 
   a {
-    color: $white;
-    text-decoration: none;
-    padding: 2.0rem;
     border-right: 1px solid $bc-navy-sub;
+    color: $white;
+    padding: 2.0rem;
+    text-decoration: none;
 
     &:active {
       background: $bc-navy-sub;
@@ -14,30 +14,30 @@ header {
   }
 
   p {
-    position: fixed;
-    top: 0;
-    right: 0;
     color: $white;
-    padding: $bmt-medium;
     font-size: $bf-xsmall;
     opacity: $bo-half;
+    padding: $bmt-medium;
+    position: fixed;
+    right: 0;
+    top: 0;
 
     &:after {
+      content: "offline";
       display: block;
-      content: 'offline';
     }
 
     &.is-active {
       &:after {
-        content: 'online';
+        content: "online";
       }
     }
   }
 }
 
 .head-delete-tkn {
-  top: 25px;
   display: block;
+  top: 25px;
 }
 
 #content {

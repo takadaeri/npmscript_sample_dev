@@ -3,30 +3,81 @@
   @include first-mt0;
 }
 
-%c-btn {
-  background: $bc-orange;
-  color: $white;
-  padding: $bmt-large $bmt-xlarge;
-  border-radius: $br-comp-def; 
-  width: 100%;
-  height: 100%;
-  display: block;
-  box-shadow: $b-shadow-def;
-  line-height: $bl-small;
-}
-
 .no-touchdv {
-  %c-btn:hover {
-    opacity: 0.8;
+  %c-btn:hover,
+  %c-btn-s:hover {
+    opacity: .8;
   }
 }
+
+
+%c-btn {
+  background: $bc-blue;
+  border-radius: $br-comp-def;
+  box-shadow: $b-shadow-def;
+  color: $white;
+  display: block;
+  height: 100%;
+  line-height: $bl-small;
+  padding: $bmt-large $bmt-xlarge;
+  position: relative; 
+  width: 100%;
+}
+
+%c-btn-s {
+  background: $bc-blue;
+  border-radius: $br-comp-def;
+  box-shadow: $b-shadow-def;
+  color: $white;
+  display: block;
+  height: 100%;
+  line-height: $bl-small;
+  padding: $bmt-medium $bmt-large; 
+  width: 100%;
+}
+
+
+// 通常サイズ
 
 .c-btn {
   @extend %c-btn;
 }
 
-.c-btn-delete {
+.c-btn-conv {
   @extend %c-btn;
-  background: $bc-blue;
-
+  background: $bc-orange;
 }
+
+
+// 小さいサイズ
+
+.c-btn-s {
+  @extend %c-btn-s;
+}
+
+.c-btn-conv-s {
+  @extend %c-btn-s;
+  background: $bc-orange;
+}
+
+
+// アイコン
+.c-btn_wrap {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.c-btn_ico {
+  left: -1rem;
+  margin-top: -.9rem;
+  position: absolute;
+  top: 50%;
+}
+
+.c-btn_txt {
+  text-align: center;
+}
+

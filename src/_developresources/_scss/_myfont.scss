@@ -1,0 +1,58 @@
+@font-face {
+  font-display: swap;
+  font-family: "myFont";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/common/fonts/myFont.eot");
+  src: url("/common/fonts/myFont.eot?#iefix") format("eot"),
+    url("/common/fonts/myFont.woff") format("woff"),
+    url("/common/fonts/myFont.ttf") format("truetype");
+}
+
+.c-font {
+  display: inline-block;
+  font-family: "myFont";
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: 1em;
+  letter-spacing: 0;
+  line-height: 1;
+  pointer-events: none;
+  speak: none;
+  text-transform: none;
+  vertical-align: text-bottom;
+  width: 1em;
+}
+
+
+.c-font-arrow_r {
+  &:before {
+    content: "\EA01";
+  }
+}
+
+%c-font-arrow_r_set {
+  content: "\EA01";
+}
+
+.c-font-kuma {
+  &:before {
+    content: "\EA02";
+  }
+}
+
+%c-font-kuma_set {
+  content: "\EA02";
+}
+
+.c-font-pengin {
+  &:before {
+    content: "\EA03";
+  }
+}
+
+%c-font-pengin_set {
+  content: "\EA03";
+}

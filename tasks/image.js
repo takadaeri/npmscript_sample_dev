@@ -37,6 +37,11 @@ const image = (src, dist, pattern) => {
 
         minimages.forEach(file => {
 
+          // ignoreが効かないのでここでパス除外
+          if (file.sourcePath.match(/_developresources/)) {
+            return
+          }
+
           const f = file.sourcePath.split(src)
           const filename = dist + f[1]
           const dir = path.dirname(filename)

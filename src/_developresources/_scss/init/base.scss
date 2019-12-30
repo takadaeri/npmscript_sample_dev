@@ -4,11 +4,11 @@ html {
 
 body {
   background: $bc-bg;
-  overflow-x: hidden;
+  color: $bc-txt;
   font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: $bf-medium;
   line-height: $bl-body;
-  color: $bc-txt;
+  overflow-x: hidden;
   word-break: break-all;
 }
 

@@ -1,19 +1,19 @@
 .c-card {
   background: $bc-bg-ops;
-  box-shadow: $b-shadow-def;
   border-radius: $br-comp-def;
-  display: block;
+  box-shadow: $b-shadow-def;
   color: $bc-txt;
-  text-decoration: none;
-  width: 100%;
+  display: block;
   height: 100%;
   overflow: hidden;
+  text-decoration: none;
+  width: 100%;
 
   &_ttl {
-    font-weight: bold;
-    padding: $bmt-large;
-    line-height: $bl-small;
     border-bottom: 1px solid $bc-line;
+    font-weight: bold;
+    line-height: $bl-small;
+    padding: $bmt-large;
   }
 
   &_thum {
@@ -24,11 +24,11 @@
 
 
 .c-card-like {
-  position: relative;
-  margin: 5px;
-  box-shadow: $b-shadow-def;
   border-radius: $br-comp-def;
+  box-shadow: $b-shadow-def;
   display: block;
+  margin: 5px;
+  position: relative;
 
   img {
     border-radius: $br-comp-def;
@@ -36,19 +36,19 @@
   }
 
   &_like {
-    position: absolute;
+    align-items: center;
+    background: $bc-orange;
+    border-radius: 50%;
     bottom: -.6rem;
+    box-shadow: $b-shadow-def;
+    color: $bc-bg-ops;
+    display: flex;
+    font-weight: bold;
+    height: 5.0rem;
+    justify-content: center;
+    padding: .5rem;
+    position: absolute;
     right: -.6rem;
     width: 5.0rem;
-    height: 5.0rem;
-    padding: .5rem;
-    display: flex;
-    border-radius: 50%;
-    background: $bc-orange;
-    box-shadow: $b-shadow-def;
-    align-items: center;
-    justify-content: center;
-    color: $bc-bg-ops;
-    font-weight: bold;
   }
 }

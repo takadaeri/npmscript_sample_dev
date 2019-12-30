@@ -14,3 +14,15 @@
 .c-txt-rt {
   text-align: right !important;
 }
+
+b,
+.c-txt-b {
+  font-weight: bold;
+}
+
+em,
+.c-txt-em {
+  color: $bc-orange;
+  font-style: normal;
+}
+

@@ -1,11 +1,11 @@
 .c-wide {
   @include module-mt-def;
-  padding: $bmt-large 15px;
   background: $bc-bg-ops;
-  position: relative;
   margin-left: -15px;
   margin-right: -15px;
   overflow: hidden;
+  padding: $bmt-large 15px;
+  position: relative;
 
   @include mqpc {
     margin-left: 0;
@@ -15,13 +15,13 @@
 
   &:after,
   &:before {
-    position: absolute;
-    width: 100vw;
-    height: 100%;
     background: $bc-bg-ops;
+    content: "";
     display: block;
-    content: '';
+    height: 100%;
+    position: absolute;
     top: 0;
+    width: 100vw;
     z-index: -1;
   }
 

@@ -1,26 +1,26 @@
-.article + .article-wide,
-.article-wide + .article-wide {
+.area + .area-wide,
+.area-wide + .area-wide {
   padding-top: 0;
 }
 
-.article {
-  max-width: $bw-max;
-  margin: 0 auto;
-  padding: #{$bmt-xlarge} 15px;
+.area {
   border-top: 1px solid $bc-line;
-  @include first-mt0;
+  margin: 0 auto;
+  max-width: $bw-max;
+  padding: #{$bmt-xlarge} 15px;
   position: relative;
+  @include first-mt0;
 
   &:after,
   &:before {
-    position: absolute;
-    width: 100vw;
-    height: 100%;
-    display: block;
-    content: '';
-    top: -1px;
-    z-index: -1;
     border-top: 1px solid $bc-line;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    width: 100vw;
+    z-index: -1;
   }
 
   &:after {
@@ -39,9 +39,14 @@
       background: $bc-bg-ops;
     }
   }
+
+  section:first-child {
+    @include first-mt0;
+  }
+
 }
 
-.article-wide {
+.area-wide {
   @include first-mt0;
 
   &--ops {

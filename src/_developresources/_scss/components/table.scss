@@ -1,15 +1,15 @@
 %c-tbl {
   @include module-mt-def;
-  border: 1px solid $bc-bg;
-  width: 100%;
   background: $bc-bg-ops;
-  border-collapse: collapse; 
+  border: 1px solid $bc-bg;
+  border-collapse: collapse;
+  width: 100%; 
 
   th,
   td {
-    padding: $bmt-medium;
     border: 1px solid $bc-bg;
     font-weight: normal;
+    padding: $bmt-medium;
   }
 
   thead th {
@@ -27,8 +27,7 @@
   @extend %c-tbl;
 }
 
-
-.c-tbl-tone {
+.c-tbl-notice {
   @extend %c-tbl;
 
   thead th {

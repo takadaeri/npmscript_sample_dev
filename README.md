@@ -8,6 +8,7 @@ npmscriptでnpmモジュールを直操作する開発環境です。
 - HTML：　pug
 - CSS：　sass, stylelint
 - Javascript：　webpack, babel-loader, eslint
+- Iconfont：　webfont, consolidate
 - Image：　imagemin, imagemin-mozjpeg, imagemin-pngquant, imagemin-gifsicle, imagemin-svgo
 
 ## ディレクトリ構成
@@ -30,6 +31,7 @@ npm run build
 - utility/：ユーティリティ
 
 ## PWA対応（試運転中）
-ホームアイコン追加、manifest.json、service workerのプリキャッシュとランタイムキャッシュに対応
+manifest.json（ホームアイコン追加）、Service Worker（プリキャッシュ、ランタイムキャッシュ）、Push API（プッシュ通知）
 - manifest.json, 各種アイコン は create-pwa を使用 （良い感じに組み込めるPWAのモジュールが無かったので手動でディレクトリ移動）
-- service worker は workbox を使用
+- Service Worker は workbox を使用
+- プッシュ通知は Firebase Cloud Messaging を使用

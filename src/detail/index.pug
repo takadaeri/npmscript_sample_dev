@@ -3,31 +3,60 @@ include /mixin/module
 
 block content
 
-  .article-wide
+  .area-wide
     img.u-max-img(src="/common/img/1200x300.png" alt="sample")
-  .article
+  .area
 
-    h1 非同期通信のオフラインキャッシュ
-    p PWA対応のひとつとして、サイト内のすべてのリソースをService Workerでキャッシュしオフラインでも閲覧可能にする。それの非同期通信部分のテスト。
-    h2 Cloud Firestore : Offline Test
-    p Firebaseのデータベース「Firestore」の挙動テスト。「Realtime Database」はウェブ版ではオフラインに非対応のため、オフラインキャッシュに対応している「Firestore」を使用する。json形式ではなく、doc,data形式となる。
-    p.c-txt FirebaseのHostingサービスの無料版ではGoogleAPI以外はCORSエラーが起きる＆そもそもFirestoreでServicce Workerが使われていそうなので、Firestoreドメインに紐づくものはサイト側でキャッシュしていない。
-    .c-grid
-      .c-row.js-likelist
-    template(id="likedata")
-      .c-col.c-col-s-6.c-col-l-3
-        a.c-card-like(data-id="item0")
-          img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg" alt="")
-          span.c-card-like_like 0
+    h1 Service Worker
+    p PWA対応のひとつとして、サイト内のリソースをService Workerでキャッシュしオフラインでも閲覧可能にする
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w50p キャッシュ対象
+          th strategies
+      tbody
+        tr
+          th /.+(\/|.html)$/
+          td NetworkFirst
+        tr
+          th /.+\.(js|css|woff|json)$/
+          td StaleWhileRevalidate
+        tr
+          th /.+\.(png|gif|jpg|jpeg|svg|ico)$/
+          td CacheFirst
+        tr
+          th new RegExp('https://www.googleapis.com/')
+          td StaleWhileRevalidate
+        tr
+          th new RegExp('https://books.google.com/')
+          td StaleWhileRevalidate
 
-    h2 Google books API : Offline Test 
-    p Service Workerで「https://www.googleapis.com/」「https://books.google.com/」をキャッシュしている状態での挙動テスト。
-    .c-grid
-      ul.c-row.js-booklist
-    template(id="productrow")
-      li.c-col.c-col-s-12.c-col-l-6
-        a.c-card
-          p.c-card_ttl
-          .c-card_thum
-            img(alt="")
+
+    section
+      h2 非同期通信のオフラインキャッシュ
+      p 非同期通信部分も Service Worker でキャッシュするとオフライン時でも閲覧できる
+      p サーバーとのやりとりが必要な場合は、localStrage でデータを保持し、オンラインになった際にサーバーへ送信するなどのやり方がある
+
+      h3 Cloud Firestore のテスト
+      p Firebaseのデータベース Cloud Firestore の挙動テスト
+      p Realtime Database はウェブ版ではオフラインに非対応のため、オフラインキャッシュに対応している Firestore でテストする（Firestore はjson形式ではなく、doc, data形式となる）
+      p.c-txt Firebase の Hostingサービス無料版ではGoogleAPI以外はCORSエラーが起きる＆そもそもFirestoreで Servicce Worker が使われていそうなので、Firestoreドメインに紐づくものはサイト側でキャッシュしない
+      .c-grid
+        .c-row.js-likelist
+      template(id="likedata")
+        .c-col.c-col-s-6.c-col-l-3
+          a.c-card-like(data-id="item0")
+            img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg" alt="")
+            span.c-card-like_like 0
+
+      h3 Google books API のテスト 
+      p Service Workerで「https://www.googleapis.com/」「https://books.google.com/」をキャッシュしている状態での挙動テスト
+      .c-grid
+        ul.c-row.js-booklist
+      template(id="productrow")
+        li.c-col.c-col-s-12.c-col-l-6
+          a.c-card
+            p.c-card_ttl
+            .c-card_thum
+              img(alt="")
 

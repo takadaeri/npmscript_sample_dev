@@ -23,10 +23,10 @@ $cols: (2,3,4,5,6,7,8,9,10,12);
 
 .c-row {
   display: flex;
-  justify-content: flex-start;
   flex-wrap: wrap;
-  margin-top: -#{$bmt-medium};
+  justify-content: flex-start;
   margin-left: -#{$bmt-medium};
+  margin-top: -#{$bmt-medium};
   padding: 0;
 
   &--tp {
@@ -50,8 +50,8 @@ $cols: (2,3,4,5,6,7,8,9,10,12);
   }
 
   & > *:empty {
-    margin-top: 0 !important;
     margin-bottom: 0 !important;
+    margin-top: 0 !important;
     visibility: hidden;
   }
 }
@@ -59,7 +59,7 @@ $cols: (2,3,4,5,6,7,8,9,10,12);
 .c-col {
   // flex: 0 0 100%;
   flex: none;
-  max-width: 100%;
   margin: #{$bmt-medium} 0 0 #{$bmt-medium};
+  max-width: 100%;
   @include first-mt0;
 }

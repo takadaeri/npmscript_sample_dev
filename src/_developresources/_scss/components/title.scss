@@ -14,37 +14,37 @@ h1,h2,h3,h4,h5,h6,
 }
 
 h1,.c-ttl-lv1 {
-  margin: map-get($bm-h1,'top') 0 map-get($bm-h1,'btm') 0;
   font-size: $bf-h1;
   line-height: $bl-h1;
+  margin: map-get($bm-h1,"top") 0 map-get($bm-h1,"btm") 0;
 }
 
 h2,.c-ttl-lv2 {
-  margin: map-get($bm-h2,'top') 0 map-get($bm-h2,'btm') 0;
   font-size: $bf-h2;
   line-height: $bl-h2;
+  margin: map-get($bm-h2,"top") 0 map-get($bm-h2,"btm") 0;
 }
 
 h3,.c-ttl-lv3 {
-  margin: map-get($bm-h3,'top') 0 map-get($bm-h3,'btm') 0;
   font-size: $bf-h3;
   line-height: $bl-h3;
+  margin: map-get($bm-h3,"top") 0 map-get($bm-h3,"btm") 0;
 }
 
 h4,.c-ttl-lv4 {
-  margin: map-get($bm-h4,'top') 0 map-get($bm-h4,'btm') 0;
   font-size: $bf-h4;
   line-height: $bl-h4;
+  margin: map-get($bm-h4,"top") 0 map-get($bm-h4,"btm") 0;
 }
 
 h5,.c-ttl-lv5 {
-  margin: map-get($bm-h5,'top') 0 map-get($bm-h5,'btm') 0;
   font-size: $bf-h5;
   line-height: $bl-h5;
+  margin: map-get($bm-h5,"top") 0 map-get($bm-h5,"btm") 0;
 }
 
 h6,.c-ttl-lv6 {
-  margin: map-get($bm-h6,'top') 0 map-get($bm-h6,'btm') 0;
   font-size: $bf-h6;
   line-height: $bl-h6;
+  margin: map-get($bm-h6,"top") 0 map-get($bm-h6,"btm") 0;
 }

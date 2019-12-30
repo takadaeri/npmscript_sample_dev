@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "myFont";
+  src: url("/common/fonts/myFont.eot");
+  src: url("/common/fonts/myFont.eot?#iefix") format("eot"),
+    url("/common/fonts/myFont.woff") format("woff"),
+    url("/common/fonts/myFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.c-font {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-family: "myFont";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  pointer-events: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+<% _.each(glyphs, function(glyph) { %>
+  .c-font-<%= glyph.metadata.name %> {
+    &:before {
+      content: "\<%= glyph.metadata.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
+    }
+  }
+
+  %c-font-<%= glyph.metadata.name %>_set {
+    content: "\<%= glyph.metadata.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
+  }
+<% }); %>

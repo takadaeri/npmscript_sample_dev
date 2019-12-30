@@ -11,14 +11,21 @@
   ],
 
   "rules": {
+    "indentation": 2,
+    "string-quotes": "double",
     "block-no-empty": null,
-    "color-no-invalid-hex": true,
     "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-no-invalid-hex": true,
+    "color-named": "never",
+    "order/properties-alphabetical-order": true,
     "comment-empty-line-before": [ "always", {
       "ignore": ["stylelint-commands", "after-comment"]
     } ],
     "declaration-colon-space-after": "always",
-    "indentation": 2,
+    "declaration-block-trailing-semicolon": "always",
+    "number-leading-zero": "never",
+    "font-weight-notation": "numeric",
     "max-empty-lines": 2,
     "rule-empty-line-before": [ "always", {
       "except": ["first-nested"],

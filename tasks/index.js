@@ -12,6 +12,7 @@ const sasslint = require('./stylelint') // scssのlint
 const dele = require('./dele') // 削除
 const copy = require('./copy') // コピー
 const html = require('./html') // html（pug）
+const iconfont = require('./iconfont') // iconfont
 const sass = require('./sass') // css（scss）
 const image = require('./image') // image
 const script = require('./script') // webpack
@@ -49,6 +50,9 @@ const htmlTask = (f) => {
     html(src, dist, data, '/**/*.pug')
   }
 }
+const iconfontTask = () => {
+  iconfont(src, dist)
+}
 const cssTask = (f) => {
   if (f) {
     sass(src, dist, isDev, f)
@@ -60,7 +64,7 @@ const imageTask = (f) => {
   if (f) {
     image(src, dist, f)
   } else {
-    image(src, dist, '/**/*.{gif,jpg,png,svg}')
+    image(src, dist, '/**/*.{gif,jpg,png,svg}')  
   }
 }
 const scriptTask = () => {
@@ -84,6 +88,9 @@ const watchTasks = () => {
   })
   watch(src + '/**/*.{gif,jpg,png,svg}', f => {
     imageTask(f)
+  })
+  watch(src + '/_developresources/icons/*.svg', f => {
+    iconfontTask()
   })
 }
 
@@ -120,6 +127,7 @@ dele(dist, () => {
   stylelintTask()
   copyTask()
   htmlTask()
+  iconfontTask()
   cssTask()
   imageTask()
   scriptTask()
