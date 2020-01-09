@@ -1,3 +1,6 @@
+// ---------------------------------------------------------------
+// init
+// ---------------------------------------------------------------
 
 const body = document.body;
 let supportTouch = 'ontouchstart' in document;
@@ -27,6 +30,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
   }  
 });
 
+
 // ---------------------------------------------------------------
 // modules
 // ---------------------------------------------------------------
@@ -48,3 +52,15 @@ let fcm = document.querySelectorAll('.js-fcm');
 fcm.forEach(()=> {
   new cloudMessaging(window.firebase);
 });
+
+
+// ---------------------------------------------------------------
+// vues
+// ---------------------------------------------------------------
+
+import vueApp from '@/vues/vueApp';
+vueApp();
+
+
+
+

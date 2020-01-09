@@ -7,7 +7,7 @@ npmscriptでnpmモジュールを直操作する開発環境です。
 - DATA：　xlsx
 - HTML：　pug
 - CSS：　sass, stylelint
-- Javascript：　webpack, babel-loader, eslint
+- Javascript：　webpack, babel-loader, eslint, Vue
 - Iconfont：　webfont, consolidate
 - Image：　imagemin, imagemin-mozjpeg, imagemin-pngquant, imagemin-gifsicle, imagemin-svgo
 
@@ -35,3 +35,8 @@ manifest.json（ホームアイコン追加）、Service Worker（プリキャ�
 - manifest.json, 各種アイコン は create-pwa を使用 （良い感じに組み込めるPWAのモジュールが無かったので手動でディレクトリ移動）
 - Service Worker は workbox を使用
 - プッシュ通知は Firebase Cloud Messaging を使用
+
+## Vue対応（自分用に更新中）
+一部Vue.jsを使えるようにwebpackを編集
+- vue-loader, babel-loader, pug-plain-loader, style-loader, css-loader, sass-loader を使用
+- store管理に Vuex を使用

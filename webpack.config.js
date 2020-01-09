@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const { VueLoaderPlugin } = require('vue-loader')
 // const WorkboxWebpackPlugin = require('workbox-webpack-plugin') webpackが固まる
 
 const NODE_ENV = process.env.NODE_ENV
@@ -36,13 +37,13 @@ webpackConfig = Object.assign(webpackConfig, {
     // Loaderの設定
     rules: [
       {
-          enforce: "pre",
-          test: /\.js$/,
-          exclude: /(node_modules|dist|tasks)/,
-          loader: "eslint-loader",
-          options: {
-              fix: true
-          }
+        enforce: "pre",
+        test: /\.js$/,
+        exclude: /(node_modules|dist|tasks)/,
+        loader: "eslint-loader",
+        options: {
+            fix: true
+        }
       },
       {
         // 拡張子 .js の場合
@@ -63,6 +64,42 @@ webpackConfig = Object.assign(webpackConfig, {
                 ]
               ]
             }
+          }
+        ]
+      },
+      {
+        test: /\.vue$/,
+        exclude: /(node_modules|dist|tasks)/,
+        use: [
+          {
+            loader: 'vue-loader',
+            options: {
+              loaders: {
+                js: 'babel-loader',
+              },
+            },
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ]
+      },
+      {
+        test: /\.pug$/,
+        use: [
+          {
+            loader: 'pug-plain-loader',
           }
         ]
       }
@@ -95,8 +132,11 @@ webpackConfig = Object.assign(webpackConfig, {
   //     ],
   //   })
   // ],
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.vue', '.js'],
     alias: {
       '@': src
     }

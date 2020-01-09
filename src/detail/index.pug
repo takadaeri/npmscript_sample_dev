@@ -7,8 +7,26 @@ block content
     img.u-max-img(src="/common/img/1200x300.png" alt="sample")
   .area
 
-    h1 Service Worker
-    p PWA対応のひとつとして、サイト内のリソースをService Workerでキャッシュしオフラインでも閲覧可能にする
+    h1 PWA
+    h2 ホームアイコン
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w50p 用意するファイル
+          th npm, ツールなど
+      tbody
+        tr
+          th manifest.json<br>favicons/<br>icons/<br>launch-screens/<br>favicon.ico<br>sampledev.appcache
+          td create-pwa
+        tr
+          th service-worker.js<br>workbox-v4.3.1/
+          td workbox、既存common.js内に追記
+        tr
+          th metaタグ
+          td 既存html内
+
+    h2 Service Worker
+    p サイト内のリソースをService Workerでキャッシュしオフラインでも閲覧可能にする
     table.c-tbl
       thead
         tr
@@ -33,11 +51,11 @@ block content
 
 
     section
-      h2 非同期通信のオフラインキャッシュ
+      h3 非同期通信のオフラインキャッシュ
       p 非同期通信部分も Service Worker でキャッシュするとオフライン時でも閲覧できる
       p サーバーとのやりとりが必要な場合は、localStrage でデータを保持し、オンラインになった際にサーバーへ送信するなどのやり方がある
 
-      h3 Cloud Firestore のテスト
+      h4 Cloud Firestore のテスト
       p Firebaseのデータベース Cloud Firestore の挙動テスト
       p Realtime Database はウェブ版ではオフラインに非対応のため、オフラインキャッシュに対応している Firestore でテストする（Firestore はjson形式ではなく、doc, data形式となる）
       p.c-txt Firebase の Hostingサービス無料版ではGoogleAPI以外はCORSエラーが起きる＆そもそもFirestoreで Servicce Worker が使われていそうなので、Firestoreドメインに紐づくものはサイト側でキャッシュしない
@@ -49,7 +67,7 @@ block content
             img.u-max-img(src="/common/img/thumb/thumb-sample-0.jpg" alt="")
             span.c-card-like_like 0
 
-      h3 Google books API のテスト 
+      h4 Google books API のテスト 
       p Service Workerで「https://www.googleapis.com/」「https://books.google.com/」をキャッシュしている状態での挙動テスト
       .c-grid
         ul.c-row.js-booklist

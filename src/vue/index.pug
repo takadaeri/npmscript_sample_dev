@@ -1,0 +1,48 @@
+extends /theme/default
+include /mixin/module
+
+block content
+
+  .area
+
+    h1 Vue
+    p サイト内の一部コンテンツでリアクティブデータを使いたい場合、局所的にVue.jsが使えるようwebpackを設定する
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p -
+          th npm
+      tbody
+        tr
+          th loader
+          td vue-loader, babel-loader, pug-plain-loader, style-loader, css-loader, sass-loader
+        tr
+          th store
+          td Vuex
+
+    .c-box-notice
+      h2.c-box-notice_ttl Vue.js使いどころ
+      .c-box_cnt
+        p リアクティブデータを用いた<b class="c-txt-em">SPAに近しいコンテンツ</b>
+        p ユーザー操作によって多くの箇所が<b class="c-txt-em">同期的に変化する必要のあるコンテンツ</b>
+        p <b class="c-txt-em">サイト全体がSPA</b>構成の場合は、<b class="c-txt-em">Vue CLI</b>か<b class="c-txt-em">Nuxt.js</b>を使って全体をVueで作るか、またはReact、Angularを使用する
+
+    h2 買い物カゴサンプル
+    #vue-app
+
+    .c-box-notice
+      h2.c-box-notice_ttl 私的もやもや
+      .c-box_cnt
+        p リアクティブデータのない静的WebサイトをSPA方式で作るのは意味ない
+        p タスクランナー的に使うのであれば、あまり意味がない＆複雑になるだけなのでnpm scriptでいい
+        p SPA案件or短期間で終了するwebアプリならVue, React, Angularを使う意味ある（後続フレームワークのためにも）
+        p 大体5年くらいで消える（利用者が減るとアップデートが減りそのままなくなる）
+        p あっちゃこっちゃ変数や処理の記述があって管理しにくい問題（個々のコンポーネントで全て閉じたい）
+        p CSSの変数やスタイルの引継が煩雑、納品後運用する案件ならコンポーネントに書かないほうが絶対いい
+        p フロント側でAPI呼び出しする作りだと初期表示が普通より重い問題、SSRにしようって動きが◎ Nuxt.jsが良さげ
+
+
+
+
+
+

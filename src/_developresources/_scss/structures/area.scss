@@ -10,6 +10,7 @@
   padding: #{$bmt-xlarge} 15px;
   position: relative;
   @include first-mt0;
+  @include last-mb0;
 
   &:after,
   &:before {

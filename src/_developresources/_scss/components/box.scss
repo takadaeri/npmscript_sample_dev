@@ -1,5 +1,6 @@
 %c-box {
-  @include module-mt-large;  
+  @include module-mt-large;
+  @include module-mb-large;
   @include first-mt0;
   background: $bc-bg-ops;
   border: 1px solid $bc-line;
