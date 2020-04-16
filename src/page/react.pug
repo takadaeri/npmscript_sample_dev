@@ -1,0 +1,30 @@
+extends /theme/default
+include /mixin/module
+
+block content
+
+  .area
+
+    h1 React
+    p サイト内の一部コンテンツでリアクティブデータを使いたい場合、局所的にReactが使えるようwebpackを設定する
+    table.c-tbl
+      thead
+        tr
+          th.c-tbl_w20p -
+          th npm
+      tbody
+        tr
+          th loader
+          td react, react-dom, @babel/preset-react, eslint-plugin-react
+        tr
+          th store
+          td 
+    p.c-txt eslintの設定とwebpackのloaderにreactを追記する必要あり
+
+    h2 サンプル
+    #root
+
+
+
+
+

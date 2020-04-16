@@ -1,6 +1,9 @@
 {
   "root": true,
-  "extends": "eslint:recommended",
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
   "rules": {
       "no-console": 0,
       "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
@@ -10,15 +13,23 @@
       "semi-style": ["error", "last"],
       "no-extra-semi": "error",
       "no-unexpected-multiline": "error",
-      "no-unreachable": "error"
+      "no-unreachable": "error",
+      "react/jsx-uses-react": 1,
+      "react/react-in-jsx-scope": "off"
   },
   "env": {
       "es6": true,
       "browser": true,
       "commonjs": true
   },
+  "parser": "babel-eslint",
   "parserOptions": {
       "sourceType": "module",
       "ecmaVersion": 2019
+  },
+  "settings": {
+    "react": {
+      "version": "16.13.1"
+    }
   }
 }
