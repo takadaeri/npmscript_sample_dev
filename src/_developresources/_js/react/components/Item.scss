@@ -1,0 +1,18 @@
+.r-item {
+  align-items: center;
+  border-top: 1px solid #ccc;
+  display: flex;
+  padding: 10px 0;
+}
+
+.r-item_text {
+  flex: 1;
+}
+
+.r-item_btn {
+  width: 120px;
+}
+
+.is-nodone {
+  background: #2c384a;
+}
