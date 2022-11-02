@@ -62,7 +62,7 @@
     "vue-loader": "^15.8.3",
     "vue-template-compiler": "^2.6.11",
     "vuex": "^3.1.2",
-    "webfont": "^9.0.0",
+    "webfont": "^11.2.26",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10",
     "workbox-build": "^4.3.1",
