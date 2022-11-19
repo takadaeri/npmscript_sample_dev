@@ -64,7 +64,7 @@
     "vuex": "^3.1.2",
     "webfont": "^9.0.0",
     "webpack": "^4.41.3",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "workbox-build": "^4.3.1",
     "xlsx": "^0.15.3"
   }
